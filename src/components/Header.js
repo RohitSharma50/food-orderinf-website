@@ -19,7 +19,7 @@ const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const isOnline = useOnline();
     return (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="">
             <Title />
             <div flex flex-row>
                 <ul>
