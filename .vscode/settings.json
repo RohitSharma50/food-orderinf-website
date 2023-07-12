@@ -1,3 +1,11 @@
 {
-    "css.lint.unknownAtRules": "ignore"
+    "css.lint.unknownAtRules": "ignore",
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": false,
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/CVS": false,
+        "**/Thumbs.db": false
+    }
 }
