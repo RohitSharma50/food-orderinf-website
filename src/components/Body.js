@@ -21,7 +21,7 @@ const Body = () => {
 
   const getRestaurant = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.3440997&lng=85.309562&page_type=DESKTOP_WEB_LISTING");
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
 
 
     const json = await data.json();
@@ -47,7 +47,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="Search-Container">
+      <div className="p-5 bg-pink-50 my-1 ">
         <input
           type="text"
           className="Search-input"
@@ -60,7 +60,7 @@ const Body = () => {
 
 
         <button
-          className="search-btn"
+          className="p-3 m-2  bg-purple-600 text-white rounded-lg hover:bg-green-800"
           onClick={() => {
             const data = filterData(searchText, allRestaurant);
             setFilterdRestaurant(data);
@@ -71,7 +71,7 @@ const Body = () => {
       </div>
 
 
-      <div className="resturant-list">
+      <div className="resturant-list flex flex-wrap">
         {(filterdRestaurant === 0) ? (<h1>No data match your filter</h1>) : (
 
           filterdRestaurant?.map((restaurant) => {
