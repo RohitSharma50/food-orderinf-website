@@ -25,7 +25,7 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
     )
 };
 const Instamart = () => {
-    const [visibleSection, setIsVisibleSection] = useState("team");
+    const [visibleSection, setIsVisibleSection] = useState("Team");
     return (
         <div>
             <h1 className='text-3xl p-2 m-2 font-bold'>InstaMart</h1>
