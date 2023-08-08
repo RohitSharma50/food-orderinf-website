@@ -26,21 +26,27 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import { Footer } from "./components/Footer";
-//import About from "./components/About";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestrauntMenu";
-const Instamart = lazy(() => import("./components/instamart"));
+import { Provider } from "react-redux";
+
+
+
 const About = lazy(() => import("./components/About"));
+const Instamart = lazy(() => import("./components/Instamart"))
 
 const AppLayout = () => {
   return (
+
     <>
       <Header />
       <Outlet />
       <Footer />
+
     </>
+
   );
 };
 
@@ -52,13 +58,13 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />
+        element: <Body className="m-0 p-0 max-w-screen-2xl" />
       },
       {
         path: "/About",
         element:
           <Suspense>
-            <Instamart />
+            <About />
           </Suspense>
       },
       {

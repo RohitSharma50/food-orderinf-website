@@ -3,6 +3,9 @@ import { useState } from "react";
 import logo from "../assets/foodie.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import { useSelector } from "react-redux";
+import React from "react";
+
 
 const Title = () => {
     return (
@@ -18,43 +21,46 @@ const Title = () => {
 
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
+
     const isOnline = useOnline();
+
+
     return (
-        <div className="flex justify-between bg-pink-500 shadow-lg ">
+        <div className="flex justify-between bg-pink-400 shadow-lg ">
             <Title />
             <div >
-                <ul className="flex py-2">
-                    <li className="px-2">
-                        <Link to="/home">Home</Link>
+                <ul className="flex py-2 ">
+                    <li className="px-2   hover:text-white hover:text-xl rounded-md">
+                        <Link to="/home ">Home</Link>
                     </li>
-                    <li className="px-2">
+                    <li className="px-2 hover:text-white hover:text-m rounded-md">
                         <Link to="/contact">Contact</Link>
                     </li>
-                    <li className="px-2">
+                    <li className="px-2 hover:text-white hover:text-m rounded-md">
                         <Link to="/About">About</Link>
                     </li>
-                    <li className="px-2">
-                        <Link to="/cart">Cart</Link>
+                    <li className="px-2 hover:text-white hover:text-m rounded-md">
+                        <Link to="/cart">Cart-item</Link>
                     </li>
-                    <li className="px-2">
+                    <li className="px-2 hover:text-white hover:text-m rounded-md">
                         <Link to="/instamart">Instamart</Link>
                     </li>
                 </ul>
-                <div className="grid grid-cols-4 gap-4">
-                    <ul className="" >
-                        <li>
+                <div className="grid  justify-items-start">
+                    <ul className="status px-1" >
+                        {/* <li>
                             {isLoggedIn ? (
                                 <button onClick={() => setIsLoggedIn(false)}>Logout</button>
                             ) : (
                                 <button onClick={() => setIsLoggedIn(true)}>Login</button>)
 
                             }
-                        </li>
+                        </li> */}
 
-                        <li>
-                            <h3 className="">{isOnline ? "✅" : "🔴"}</h3>
-                        </li>
+                        <li >
+                            <h3 >{isOnline ? "✅" : "🔴"} </h3>
 
+                        </li>
                     </ul>
                 </div>
 
