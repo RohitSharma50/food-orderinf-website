@@ -9,7 +9,7 @@ const RestaurantMenu = () => {
 
     if (resInfo === null) return <Shimmer />;
 
-    const { name, cuisines, costForTwoMessage, } = resInfo?.cards[0]?.card?.card?.info;
+    const { name, cuisines, costForTwoMessage, } = resInfo?.cards[0]?.card?.card?.data;
 
     const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
@@ -33,10 +33,10 @@ const RestaurantMenu = () => {
 
                 {itemCards?.map((item) => (
 
-                    <li key={item.card.info.id} className="overflow-x-hidden">
-                        {item.card.info.name} -{" Rs."}
-                        {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-                        {item.card.info.description}
+                    <li key={item.card.data.id} className="overflow-x-hidden">
+                        {item.card.data.name} -{" Rs."}
+                        {item.card.data.price / 100 || item.card.info.defaultPrice / 100}
+                        {item.card.data.description}
 
                         {<div>
                             <button className="p-2 m-5 bg-green-100 grid-cols-1" onClick={handleAddItem}>addItem</button>

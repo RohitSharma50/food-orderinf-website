@@ -13,31 +13,52 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filterdRestaurant, setFilterdRestaurant] = useState([]);
 
+  useEffect(() => {
+    getRestaurants();
+  }, []);
 
-  const getRestaurant = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+  const getRestaurants = async () => {
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
 
 
-    const json = await data.json();
-
-
-    // setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-    // setFilterdRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-
-    setAllRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilterdRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+      const json = await data.json();
 
 
 
+      async function checkJsonData(jsonData) {
 
-  return (allRestaurant.length === 0) ? (
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+
+          // initialize checkData for Swiggy Restaurant data
+          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+          // if checkData is not undefined then return it
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+      // call the checkJsonData() function which return Swiggy Restaurant data
+      const resData = await checkJsonData(json);
+
+      // update the state variable restaurants with Swiggy API data
+      setAllRestaurant(resData);
+      setFilterdRestaurant(resData);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
+
+
+
+
+  return (allRestaurant?.length === 0) ? (
     <Shimmer />
+
   ) : (
     <>
       <div className="p-5 bg-pink-50 my-1 ">
@@ -60,13 +81,10 @@ const Body = () => {
 
           }}
         >Search</button>
-        {/* <h1>{setRestaurants}</h1> */}
       </div>
 
-
       <div className="resturant-list flex flex-wrap">
-        {(filterdRestaurant.length === 0 ? <h1>No data match your filter</h1> :
-
+        {(filterdRestaurant?.length === 0 ? <h1>No data match your filter</h1> :
           filterdRestaurant?.map((restaurant) => {
             return (
               <Link
@@ -88,4 +106,5 @@ const Body = () => {
 
   )
 };
+
 export default Body; 

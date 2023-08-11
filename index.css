@@ -10,3 +10,12 @@
  @import "tailwindcss/components";
 
  @import "tailwindcss/utilities"; */
+ /* .cuisines {
+     text-overflow: clip;
+     display: flex;
+     flex-wrap: wrap;
+     word-break: break-all;
+
+ } */
+
+ /* // font-light text-ellipsis whitespace-pre-wrap  */

@@ -58,7 +58,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body className="m-0 p-0 max-w-screen-2xl" />
+        element: <Body className="flex flex-wrap m-2 p-1 max-w-screen-2xl justify-center" />
       },
       {
         path: "/About",
@@ -79,13 +79,13 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:resId",
         element: <RestaurantMenu />
       },
-      {
-        path: "/instamart",
-        element:
-          <Suspense>
-            <Instamart />
-          </Suspense>
-      },
+      // {
+      //   path: "/instamart",
+      //   element:
+      //     <Suspense>
+      //       <Instamart />
+      //     </Suspense>
+      // },
     ]
   },
 

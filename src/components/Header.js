@@ -11,7 +11,7 @@ const Title = () => {
     return (
         <a href="/">
             <img
-                className="h-28 p-2"
+                className="h-28 p-0"
                 alt="Logo"
                 src={logo} />
         </a>
@@ -29,7 +29,7 @@ const Header = () => {
         <div className="flex justify-between bg-pink-400 shadow-lg ">
             <Title />
             <div >
-                <ul className="flex py-2 ">
+                <ul className="flex py-2 pr-2 text-2xl ">
                     <li className="px-2   hover:text-white hover:text-xl rounded-md">
                         <Link to="/home ">Home</Link>
                     </li>
@@ -42,9 +42,7 @@ const Header = () => {
                     <li className="px-2 hover:text-white hover:text-m rounded-md">
                         <Link to="/cart">Cart-item</Link>
                     </li>
-                    <li className="px-2 hover:text-white hover:text-m rounded-md">
-                        <Link to="/instamart">Instamart</Link>
-                    </li>
+
                 </ul>
                 <div className="grid  justify-items-start">
                     <ul className="status px-1" >
