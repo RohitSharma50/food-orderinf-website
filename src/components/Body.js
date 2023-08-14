@@ -26,7 +26,7 @@ const Body = () => {
       const json = await data.json();
 
 
-
+      // was showing an error of data fatching because sometime data coming from cards[1] sometime cards[2] and different on other times so me make a function and check which value of i gives data in cards[i]
       async function checkJsonData(jsonData) {
 
         for (let i = 0; i < jsonData?.data?.cards.length; i++) {

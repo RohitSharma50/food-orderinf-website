@@ -3,7 +3,6 @@ import { useState } from "react";
 import logo from "../assets/foodie.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
-import { useSelector } from "react-redux";
 import React from "react";
 
 
@@ -40,7 +39,7 @@ const Header = () => {
                         <Link to="/About">About</Link>
                     </li>
                     <li className="px-2 hover:text-white hover:text-m rounded-md">
-                        <Link to="/cart">Cart-item</Link>
+                        <Link to="/cart">Cart</Link>
                     </li>
 
                 </ul>

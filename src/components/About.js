@@ -8,11 +8,11 @@ const About = () => {
                     😎 Key Features
                 </li>
                 <li>📌 Shimmer UI for Better UserExperience</li>
-
                 <li>📌 Search Feature </li>
-                <li>📌 Sort on diffrent category Feature </li>
-                <li>📌 Cart Feature Add Remove Item From Cart</li>
+                <li>📌 Cart Feature</li>
                 <li>📌 Checking network connection</li>
+                <li>📌 forms to contact</li>
+                <li>📌 Single page application</li>
                 <li>📌 Implemented Lazy Loading or OnDemand Loading on This Router</li>
             </ul>
             <ul className="flex flex-col gap-6 text-base mt-10 md:text-sm sm:gap-3 sm:text-xs sm:mt-7">
