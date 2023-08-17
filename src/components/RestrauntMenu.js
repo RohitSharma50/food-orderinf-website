@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
                 <div className="menu-items-container mt-2 max-w-3xl">
                     <div className="menu-title-wrap p-5">
                         <h3 className="menu-title text-zinc-600">Recommended </h3>
-                        <p className="menu-count mt-2   ">{menuItems.length} ITEMS</p>
+                        <p className="menu-count mt-2   ">{menuItems?.length} ITEMS</p>
                     </div>
                     <div className="menu-items-list flex justify-between flex-col ">
                         {menuItems.map((item) => (

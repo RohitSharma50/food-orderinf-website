@@ -1,7 +1,8 @@
 {
   "name": "namastey-react",
   "version": "1.0.0",
-  "description": "this is live course",
+  "description": "this is live course", 
+
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -18,6 +19,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "cors": "^2.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",

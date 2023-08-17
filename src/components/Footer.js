@@ -12,7 +12,7 @@ export const Footer = () => {
       Created By
 
 
-      <a className=" text-red-600 hover:text-purple-800 text-2xl mx-1   "
+      <a className=" text-red-600 hover:text-purple-800 text-2xl mx-1 "
         href="https://www.linkedin.com/in/rohit-sharma50/"
         target="_blank"
         title="Rohit Sharma's Linkedin Profile"

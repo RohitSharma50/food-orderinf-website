@@ -1,5 +1,5 @@
 import React from 'react'
-import cart from "../Images/working-on.webp";
+import cart from "../Images/working-on.jpg";
 
 const Cart = () => {
     return (

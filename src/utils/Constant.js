@@ -12,6 +12,12 @@ export const swiggy_menu_api_URL =
 
 
 
+export const options = {
+  method: "GET",
+  headers: {
+    Authorization: "",
+  },
+};
 // menu items api card type key
 
 export const MENU_ITEM_TYPE_KEY =
