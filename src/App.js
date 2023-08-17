@@ -35,7 +35,7 @@ import Cart from "./components/Cart";
 
 
 const About = lazy(() => import("./components/About"));
-const Instamart = lazy(() => import("./components/Instamart"))
+//const Instamart = lazy(() => import("./components/Instamart"))
 
 const AppLayout = () => {
   return (
@@ -69,7 +69,8 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />
+        element:
+          <Suspense>  <Contact /> </Suspense>
       },
       {
         path: "/home",
