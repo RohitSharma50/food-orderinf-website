@@ -3,7 +3,7 @@
 ### _[Namaste React Live Course](https://learn.namastedev.com/courses/namaste-react-live) from Zero to Hero 🚀 by [Akshay Saini](https://www.linkedin.com/in/akshaymarch7/) Founder of [NamasteDev](https://courses.namastedev.com/learn/Namaste-React). 
 
 
-- I made [🚀 FoodFire App 😍](https://foodie-apps.netlify.app//) from scratch using React.js and Parcel.js, which is the part of this course.
+- I made [🚀 foodie-apps 😍](https://foodie-apps.netlify.app//) from scratch using React.js and Parcel.js, which is the part of this course.
 
 
 
