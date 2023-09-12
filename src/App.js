@@ -31,19 +31,29 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestrauntMenu";
 import Cart from "./components/Cart";
-
+import { Profiler } from "react";
 
 
 const About = lazy(() => import("./components/About"));
 //const Instamart = lazy(() => import("./components/Instamart"))
 
+function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {
+  // Aggregate or log render timings...
+}
+
 const AppLayout = () => {
   return (
 
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Profiler id="Sidebar" onRender={onRender}>
+        <Header />
+      </Profiler>
+      <Profiler id="Sidebar" onRender={onRender}>
+        <Outlet />
+      </Profiler>
+      <Profiler id="Sidebar" onRender={onRender}>
+        <Footer />
+      </Profiler>
 
     </>
 
@@ -58,7 +68,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body className="flex flex-wrap m-2 p-1 max-w-screen-2xl justify-center" />
+        element:
+          <Suspense>
+            <Body className="flex flex-wrap m-2 p-1 max-w-screen-2xl justify-center" />
+          </Suspense>
+
       },
       {
         path: "/About",
@@ -78,11 +92,18 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:resId",
-        element: <RestaurantMenu />
+        element:
+          <Suspense>
+            <RestaurantMenu />
+          </Suspense>
       },
       {
         path: "/cart",
-        element: <Cart />
+        element:
+          <Suspense>
+            <Cart />
+          </Suspense>
+
       },
       // {
       //   path: "/instamart",

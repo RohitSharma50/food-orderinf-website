@@ -1,11 +1,5 @@
-import {
-  MENU_API,
-  IMG_CDN_URL,
-  ITEM_IMG_CDN_URL,
-  MENU_ITEM_TYPE_KEY,
-  RESTAURANT_TYPE_KEY,
-} from "../utils/Constant";
-// let n = "☆";
+import { IMG_CDN_URL } from "../utils/Constant";
+
 const RestrauntCard = ({
   name,
   cuisines,
