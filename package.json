@@ -1,8 +1,7 @@
 {
   "name": "namastey-react",
   "version": "1.0.0",
-  "description": "this is live course", 
-
+  "description": "this is live course",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -11,6 +10,7 @@
   "author": "Rohit Sharma",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.23.7",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.3",
     "postcss": "^8.4.24",
