@@ -7,5 +7,6 @@
         "**/.svn": false,
         "**/CVS": false,
         "**/Thumbs.db": false
-    }
+    },
+    "liveServer.settings.port": 5501
 }
